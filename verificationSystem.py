@@ -23,7 +23,7 @@ def fileExtraction():
 #This function computes the hash value of a concatenated combination of a given password and salt value
 def computeMD5hash(my_str):
     message = hashlib.md5()
-    message.update(my_str.enocde('utf-8')) #Encode password+salt value concatenation
+    message.update(my_str.encode('utf-8')) #Encode password+salt value concatenation
     return message.hexdigest()
 
 #This function verifies the hash value by extraction given a specific user id and compares this with computed hash value
