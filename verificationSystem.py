@@ -36,3 +36,15 @@ def verifyHash(hash_str, line):
         return "Yes, the input password matches with the hash value in the database."
     else:
         return "No, the input password does not match the hash value in the database."
+
+
+
+
+
+## RUNNING MAIN FILE FUNCTIONS -----------------------------------------------------
+#Verification System -->
+concat_txt = fileExtraction()
+hash_txt = computeMD5hash(concat_txt)
+print("Concatenation: ", concat_txt)
+print("Compute: ", hash_txt)
+print(verifyHash(hash_txt, 1), "\n")
