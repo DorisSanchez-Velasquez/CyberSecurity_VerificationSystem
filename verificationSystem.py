@@ -40,6 +40,11 @@ def verifyHash(hash_str, line):
 
 
 
+##BRUTE FORCE CRACKER SYSTEM -------------------------------------------------
+#This function will iterate through values ranges [0, 1000] for passwords and ranges [0, 100] for salts values to test out hashes and compare to database hash
+def crackPassword():
+    return
+
 
 ## RUNNING MAIN FILE FUNCTIONS -----------------------------------------------------
 #Verification System -->
