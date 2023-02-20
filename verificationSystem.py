@@ -21,10 +21,18 @@ def fileExtraction():
     return concat_txt
 
 #This function computes the hash value of a concatenated combination of a given password and salt value
-def computeMD5hash():
-    return
+def computeMD5hash(my_str):
+    message = hashlib.md5()
+    message.update(my_str.enocde('utf-8')) #Encode password+salt value concatenation
+    return message.hexdigest()
 
 #This function verifies the hash value by extraction given a specific user id and compares this with computed hash value
-def verifyHash():
-    return
+def verifyHash(hash_str, line):
+    #Obtain the hash value stored in database of specific user (user id mapped to that line within Hash.txt)
+    hash = linecache.getline("Hash.txt", line)
 
+    #If the computed hash matches the hash in the database, return confirmation
+    if hash.strip() == hash_str.strip():
+        return "Yes, the input password matches with the hash value in the database."
+    else:
+        return "No, the input password does not match the hash value in the database."
